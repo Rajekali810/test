@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - WebXamina</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* Global styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #1e1e1e;
+      color: #fff;
+    }
+
+    /* Header styling */
+    .header {
+      background-color: #002e5e;
+      padding: 15px;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .header h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+
+    /* Dropdown menus */
+    .dropdown {
+      display: inline-block;
+      position: relative;
+      margin: 0 20px;
+    }
+
+    .dropdown button {
+      background-color: #00509e;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.2em;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      border-radius: 5px;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover button {
+      background-color: #003f7f;
+    }
+
+    /* Left Sidebar */
+    .sidebar {
+      background-color: #003366;
+      padding: 20px;
+      color: white;
+      position: fixed;
+      top: 100px;
+      width: 220px;
+      height: 100%;
+      box-shadow: 5px 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .left-sidebar {
+      left: 0;
+    }
+
+    .right-sidebar {
+      right: 0;
+    }
+
+    .sidebar h3 {
+      color: #ffffff;
+      margin-bottom: 20px;
+      font-size: 1.5em;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #ffffff;
+      padding: 12px;
+      font-size: 1.1em;
+      text-decoration: none;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      background-color: #00509e;
+      transition: background-color 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #004080;
+    }
+
+    /* Page content */
+    .content {
+      margin: 100px 250px;
+      padding: 20px;
+      text-align: center;
+      background-color: #262626;
+      color: #00ff00;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    footer .social-icons i {
+      margin: 0 10px;
+      font-size: 2em;
+      color: #00509e;
+      transition: color 0.3s;
+    }
+
+    footer .social-icons i:hover {
+      color: #0078d4;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header class="header">
+    <h1>Dashboard</h1>
+    <div class="dropdown">
+      <button>Engineering Calculator</button>
+      <div class="dropdown-content">
+        <a href="#">Calculator 1</a>
+        <a href="#">Calculator 2</a>
+        <a href="#">Calculator 3</a>
+        <a href="#">Calculator 4</a>
+        <a href="#">Calculator 5</a>
+        <a href="#">Calculator 6</a>
+        <a href="#">Calculator 7</a>
+        <a href="#">Calculator 8</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button>Drawing Tool</button>
+      <div class="dropdown-content">
+        <a href="#">Drawing 1</a>
+        <a href="#">Drawing 2</a>
+        <a href="#">Drawing 3</a>
+        <a href="#">Drawing 4</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button>Chief Engineer Rate Ref.</button>
+      <div class="dropdown-content">
+        <a href="#">Rate 1</a>
+        <a href="#">Rate 2</a>
+        <a href="#">Rate 3</a>
+        <a href="#">Rate 4</a>
+        <a href="#">Rate 5</a>
+        <a href="#">Rate 6</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Left Sidebar -->
+  <div class="sidebar left-sidebar">
+    <h3>Engineering Tools</h3>
+    <a href="#">Rate Analyses Calculator</a>
+    <a href="#">Load Calculation</a>
+    <a href="#">Solar Calculation</a>
+    <a href="#">AC Calculation</a>
+  </div>
+
+  <!-- Right Sidebar -->
+  <div class="sidebar right-sidebar">
+    <h3>Letters</h3>
+    <a href="#">Letter to Agency</a>
+    <a href="#">Letter to Authority</a>
+    <a href="#">Letter to AE</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <h2>Welcome to the Dashboard</h2>
+    <p>Select tools from the dropdowns or sidebars to begin working.</p>
+  </div>
+
+  <footer>
+    <div class="social-icons">
+      <i class="fab fa-facebook-square"></i>
+      <i class="fab fa-twitter-square"></i>
+      <i class="fab fa-linkedin"></i>
+    </div>
+  </footer>
+
+</body>
+</html>

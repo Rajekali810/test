@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Data</title>
+  <style>
+    /* General styling */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    .form-container {
+      width: 450px;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+      border: 2px solid #dde2e7;
+    }
+
+    .form-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-container h2 {
+      font-size: 24px;
+      color: #00509e;
+      margin-bottom: 25px;
+    }
+
+    /* Label styling */
+    .form-container label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    /* Input field styling */
+    .form-container input[type="text"],
+    .form-container input[type="file"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+      background-color: #f9f9fb;
+      transition: border-color 0.3s;
+    }
+
+    .form-container input[type="text"]:focus,
+    .form-container input[type="file"]:focus {
+      border-color: #0078d4;
+    }
+
+    /* Button styling */
+    .form-container button {
+      background-color: #00509e;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-right: 10px;
+      transition: background-color 0.3s;
+    }
+
+    .form-container button:hover {
+      background-color: #0078d4;
+    }
+
+    .form-container .save-more {
+      background-color: #28a745;
+    }
+
+    .form-container .save-more:hover {
+      background-color: #218838;
+    }
+
+    /* Additional styling for the form */
+    .form-container input::placeholder {
+      color: #bbb;
+      font-size: 14px;
+    }
+
+    /* Add spacing and grouping to form elements */
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Create Data</h2>
+    <form id="create-data-form">
+
+      <div class="form-group">
+        <label for="jeName">Name of the JE:</label>
+        <input type="text" id="jeName" name="jeName" placeholder="Enter JE name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="subDivision">Sub-Division Name:</label>
+        <input type="text" id="subDivision" name="subDivision" placeholder="Enter sub-division name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="sectionName">Section Name:</label>
+        <input type="text" id="sectionName" name="sectionName" placeholder="Enter section name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="mobileNo">Mobile No.:</label>
+        <input type="text" id="mobileNo" name="mobileNo" placeholder="Enter mobile number" required>
+      </div>
+
+      <div class="form-group">
+        <label for="workName">Name of Work:</label>
+        <input type="text" id="workName" name="workName" placeholder="Enter name of the work" required>
+      </div>
+
+      <div class="form-group">
+        <label for="workUpload">Upload Work:</label>
+        <input type="file" id="workUpload" name="workUpload" required>
+      </div>
+
+      <div>
+        <button type="submit">Save</button>
+        <button type="button" class="save-more" onclick="saveAndAddAnother()">Save & Add Another</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('create-data-form');
+
+    // Save and reset the form to allow another entry
+    function saveAndAddAnother() {
+      alert('Data saved successfully! You can add another entry.');
+      form.reset(); // Clear the form for another entry
+    }
+
+    // Regular Save - just alert for now (no backend handling)
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent form submission
+      alert('Data saved successfully!');
+      form.reset(); // Clear the form after saving
+    });
+  </script>
+
+</body>
+</html>

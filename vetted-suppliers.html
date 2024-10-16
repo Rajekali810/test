@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vetted Suppliers List</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* Global styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f3f4f6;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background-color: #00509e;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    /* Main content area */
+    .content {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      border: 2px solid lightgreen;
+    }
+
+    .content h2 {
+      text-align: center;
+      color: #00509e;
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+
+    /* Supplier list */
+    .supplier-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .supplier-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f8f9fa;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .supplier-list li:hover {
+      background-color: #e2e6ea;
+    }
+
+    .supplier-details {
+      flex-grow: 1;
+    }
+
+    .supplier-details h4 {
+      margin: 0;
+      color: #333;
+    }
+
+    .supplier-details p {
+      margin: 5px 0;
+      color: #666;
+    }
+
+    .supplier-contact {
+      font-size: 1.2em;
+      color: #00509e;
+    }
+
+    .supplier-contact a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .supplier-contact i {
+      margin-right: 8px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #00509e;
+      color: white;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Vetted Suppliers</h1>
+  </header>
+
+  <!-- Main Content -->
+  <div class="content">
+    <h2>List of Approved Suppliers</h2>
+
+    <ul class="supplier-list">
+      <li>
+        <div class="supplier-details">
+          <h4>Supplier 1</h4>
+          <p>Location: Mumbai</p>
+          <p>Specialty: Construction Materials</p>
+        </div>
+        <div class="supplier-contact">
+          <a href="tel:+912345678901"><i class="fas fa-phone"></i> Call</a>
+        </div>
+      </li>
+
+      <li>
+        <div class="supplier-details">
+          <h4>Supplier 2</h4>
+          <p>Location: Delhi</p>
+          <p>Specialty: Electrical Components</p>
+        </div>
+        <div class="supplier-contact">
+          <a href="tel:+911234567890"><i class="fas fa-phone"></i> Call</a>
+        </div>
+      </li>
+
+      <li>
+        <div class="supplier-details">
+          <h4>Supplier 3</h4>
+          <p>Location: Bengaluru</p>
+          <p>Specialty: Plumbing Supplies</p>
+        </div>
+        <div class="supplier-contact">
+          <a href="tel:+918765432100"><i class="fas fa-phone"></i> Call</a>
+        </div>
+      </li>
+
+      <li>
+        <div class="supplier-details">
+          <h4>Supplier 4</h4>
+          <p>Location: Chennai</p>
+          <p>Specialty: Paints and Coatings</p>
+        </div>
+        <div class="supplier-contact">
+          <a href="tel:+914456789000"><i class="fas fa-phone"></i> Call</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 WebXamina. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
