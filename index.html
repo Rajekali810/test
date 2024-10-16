@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebXamina - Estimator Tools</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* Global styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f3f4f6;
+      color: #333;
+    }
+
+    /* Header styling */
+    .header {
+      background-color: #002e5e;
+      padding: 15px;
+      text-align: center;
+      color: #fff;
+    }
+
+    /* Logo styling */
+    .header .logo {
+      font-size: 2.5em;
+      color: white;
+      font-weight: bold;
+    }
+
+    .header .logo span {
+      color: #00509e;
+    }
+
+    .header .logo .x {
+      color: #f4a300;
+      background-image: linear-gradient(to right, #f4a300 33%, #138808 33%, #138808 66%, #0080ff 66%);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    /* Navigation styling */
+    .header .nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .header .nav a {
+      text-decoration: none;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 1.1em;
+      border-radius: 8px;
+      background-color: #006bb6;
+      transition: background-color 0.3s;
+    }
+
+    .header .nav a:hover {
+      background-color: #004080;
+    }
+
+    /* Estimator Tools section */
+    .estimator-tools {
+      padding: 50px;
+      text-align: center;
+      background-color: #00509e;
+      color: white;
+    }
+
+    .estimator-tools h2 {
+      margin-bottom: 30px;
+      font-size: 2.4em;
+    }
+
+    .tool {
+      display: inline-block;
+      margin: 15px;
+      padding: 25px;
+      background-color: #0078d4;
+      color: #fff;
+      border-radius: 10px;
+      font-size: 1.3em;
+      cursor: pointer;
+      transition: transform 0.3s, background-color 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .tool:hover {
+      background-color: #005cb2;
+      transform: translateY(-5px);
+    }
+
+    .tool i {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    /* Login form styling */
+    .form-container {
+      max-width: 400px;
+      margin: 100px auto;
+      padding: 40px;
+      background-color: #1a1aff;
+      background: linear-gradient(to right, #000080, #1e90ff);
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      color: #fff;
+      text-align: center;
+    }
+
+    .form-container h3 {
+      margin-bottom: 30px;
+      font-size: 1.8em;
+      font-weight: bold;
+    }
+
+    .input-field {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .input-field i {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #999;
+    }
+
+    .form-container input[type="text"],
+    .form-container input[type="password"] {
+      width: 100%;
+      padding: 15px 20px 15px 40px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 50px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 1.1em;
+      transition: background-color 0.3s;
+    }
+
+    .form-container input[type="text"]:focus,
+    .form-container input[type="password"]:focus {
+      background-color: rgba(255, 255, 255, 0.2);
+      outline: none;
+      box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+    }
+
+    .form-container button {
+      background-color: #00ffcc;
+      color: #000;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .form-container button:hover {
+      background-color: #32cd32;
+    }
+
+    .footer-text {
+      font-size: 0.9em;
+      color: lightgray;
+      margin-top: 20px;
+    }
+
+    /* Left and Right Sidebar */
+    .sidebar {
+      background-color: #00509e;
+      padding: 20px;
+      color: white;
+      position: fixed;
+      top: 100px;
+      width: 220px;
+      height: 100%;
+      box-shadow: 5px 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .left-sidebar {
+      left: 0;
+    }
+
+    .right-sidebar {
+      right: 0;
+    }
+
+    .sidebar h3 {
+      color: #ffffff;
+      margin-bottom: 20px;
+      font-size: 1.5em;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #ffffff;
+      padding: 12px;
+      font-size: 1.1em;
+      text-decoration: none;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      background-color: #006bb6;
+      transition: background-color 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #004080;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    /* Social media icons */
+    .social-icons {
+      margin-top: 10px;
+    }
+
+    .social-icons i {
+      margin: 0 10px;
+      font-size: 2em;
+      color: #00509e;
+      transition: color 0.3s;
+    }
+
+    .social-icons i:hover {
+      color: #0078d4;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header class="header">
+    <div class="logo">WEB<span class="x">X</span>AMINA</div>
+    <div class="nav">
+      <a href="#">Home</a>
+      <a href="products.html">Products</a>
+      <a href="services.html">Services</a>
+      <a href="about-us.html">About Us</a>
+      <a href="contact-us.html">Contact Us</a>
+    </div>
+  </header>
+
+  <!-- Estimator Tools Section -->
+  <section class="estimator-tools">
+    <h2>Estimator Tools for Work</h2>
+    <div class="tool" onclick="openCalculator()">
+      <i class="fas fa-calculator" style="color: #ff5733;"></i><br>Calculator
+    </div>
+    <div class="tool" onclick="openCreateDataPage()">
+      <i class="fas fa-upload" style="color: #33ff57;"></i><br>Create Data
+    </div>
+    <div class="tool" onclick="openRateReferencePage()">
+      <i class="fas fa-list-alt" style="color: #3377ff;"></i><br>Rate Reference
+    </div>
+  </section>
+
+  <!-- Login Form Section -->
+  <div class="form-container">
+    <h3>Estimator / Admin Login</h3>
+    <form id="login-form">
+      <div class="input-field">
+        <i class="fas fa-user"></i>
+        <input type="text" id="userID" name="userID" placeholder="Username" required>
+      </div>
+
+      <div class="input-field">
+        <i class="fas fa-lock"></i>
+        <input type="password" id="password" name="password" placeholder="Password" required>
+      </div>
+
+      <button type="submit">Login</button>
+
+      <div class="footer-text">Use only for PWD Division office</div>
+    </form>
+  </div>
+
+  <!-- Left Sidebar -->
+  <div class="sidebar left-sidebar">
+    <h3>Rate Analyses</h3>
+    <a href="rate-analyses.html">Calculator</a>
+    <a href="load-calculation.html">Load Calculation</a>
+    <a href="solar-calculation.html">Solar</a>
+    <a href="ac-calculation.html">AC Calculation</a>
+  </div>
+
+  <!-- Right Sidebar -->
+  <div class="sidebar right-sidebar">
+    <h3>JE/AE Tools</h3>
+    <a href="admin-dashboard.html">Dashboard</a>
+    <a href="index.html">Price List</a>
+    <a href="vetted-suppliers.html">Vetted Rate</a>
+    <a href="settings.html">Settings</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    // Navigation handlers
+    function openCalculator() {
+      window.location.href = "calculator.html";
+    }
+
+    function openCreateDataPage() {
+      window.location.href = "create-data.html";
+    }
+
+    function openRateReferencePage() {
+      window.location.href = "rate-reference.html";
+    }
+
+    // Handle login form submission
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Get user inputs
+      const userID = document.getElementById('userID').value;
+      const password = document.getElementById('password').value;
+
+      // Simple validation (in practice, you should verify credentials server-side)
+      if (userID === "admin" && password === "password123") {
+        window.location.href = "dashboard.html"; // Redirect to new page after login
+      } else {
+        alert("Invalid User ID or Password. Please try again.");
+      }
+    });
+  </script>
+</body>
+</html>
